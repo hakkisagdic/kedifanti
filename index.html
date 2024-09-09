@@ -6,73 +6,89 @@
     <title>KediFanti</title>
     <style>
         body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    padding-bottom: 130px;
-}
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            padding-bottom: 130px;
+            box-sizing: border-box;
+        }
 
-.container {
-    display: flex;
-    padding: 20px;
-    box-sizing: border-box;
-}
+        .container {
+            display: flex;
+            flex-wrap: wrap; /* Mobil uyumlu düzenleme için ekledik */
+            padding: 20px;
+            box-sizing: border-box;
+        }
 
-.left {
-    width: 33%;
-    box-sizing: border-box;
-    text-align: center; /* Sol bölümdeki içeriği ortalamak için */
-}
+        .left, .right {
+            box-sizing: border-box;
+            padding: 10px; /* Kenar boşluklarını mobil uyumlu hale getirmek için ekledik */
+        }
 
-.right {
-    width: 67%;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center; /* Sağ bölümde içeriği yatay olarak ortalamak için */
-}
+        .left {
+            flex: 1 1 100%; /* Mobil cihazlarda tam genişlik için */
+            text-align: center;
+        }
 
-img {
-    width: 100%;
-    height: auto;
-}
+        .right {
+            flex: 1 1 100%; /* Mobil cihazlarda tam genişlik için */
+            display: flex;
+            justify-content: center;
+        }
 
-.footer {
-    background-color: #f1f1f1;
-    font-size: 1.5em;
-    padding: 20px;
-    text-align: center;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    z-index: 1000; /* Footer'ı diğer içeriklerin üstünde tutar */
-}
+        img {
+            max-width: 100%;
+            height: auto;
+        }
 
+        .footer {
+            background-color: #f1f1f1;
+            font-size: 1em; /* Mobil cihazlarda daha küçük yazı boyutu */
+            padding: 10px; /* Mobil cihazlarda daha az padding */
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        /* Medya sorguları ile mobil uyumluluk sağlıyoruz */
+        @media (min-width: 768px) {
+            .left {
+                width: 33%;
+                text-align: left; /* Geniş ekranlarda sola hizalama */
+            }
+
+            .right {
+                width: 67%;
+            }
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
         <div class="left">
-             <p>   Kedi Fanti Kedi Fanti </p>
-             <p>   Kedilerin en fantisi </p>
-             <p>   Kedi Fanti Kedi Fanti </p>
-             <p>   Kedilerin en fantisi </p>
-        </br>
-             <p>   Kedi Fanti Kedi Fanti </p>
-             <p>   Ağaçlara tırmanır </p>
-             <p>   Kedi Fanti Kedi Fanti </p>
-             <p>   Sonra aşağı inemez </p>
-        </br>
-             <p>   Kedi Fanti Kedi Fanti </p>
-             <p>   Sabah akşam miyavlar </p>
-             <p>   Kedi Fanti Kedi Fanti </p>
-             <p>   Akşam olunca uyur </p>
-        </br>
-             <p>  Kedi Fanti Kedi Fanti </p>
-             <p>  Uykusu mu gelmiş </p>
-             <p>  Kedi Fanti Kedi Fanti </p> 
-             <p>  Yerine gidip uyurmuş </p>
+            <p>Kedi Fanti Kedi Fanti</p>
+            <p>Kedilerin en fantisi</p>
+            <p>Kedi Fanti Kedi Fanti</p>
+            <p>Kedilerin en fantisi</p>
+            <br>
+            <p>Kedi Fanti Kedi Fanti</p>
+            <p>Ağaçlara tırmanır</p>
+            <p>Kedi Fanti Kedi Fanti</p>
+            <p>Sonra aşağı inemez</p>
+            <br>
+            <p>Kedi Fanti Kedi Fanti</p>
+            <p>Sabah akşam miyavlar</p>
+            <p>Kedi Fanti Kedi Fanti</p>
+            <p>Akşam olunca uyur</p>
+            <br>
+            <p>Kedi Fanti Kedi Fanti</p>
+            <p>Uykusu mu gelmiş</p>
+            <p>Kedi Fanti Kedi Fanti</p>
+            <p>Yerine gidip uyurmuş</p>
         </div> 
 
         <div class="right">
@@ -81,7 +97,7 @@ img {
     </div>
 
     <footer class="footer">
-        <p> Doğum günün kutlu olsun Babaların en Fantisi </p>
+        <p>Doğum günün kutlu olsun Babaların en Fantisi</p>
     </footer>
 
 </body>
