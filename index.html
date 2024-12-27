@@ -10,44 +10,42 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            min-height: 100vh; /* Sayfanın en az ekran kadar yüksek olması için */
+            min-height: 100vh; /* Tam ekranı doldurma */
             display: flex;
-            flex-direction: column; /* Dikey düzen */
-            justify-content: space-between; /* İçeriği eşit yayıyoruz */
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .container {
             display: flex;
-            flex-wrap: wrap; /* Mobil uyumlu düzen */
+            flex-wrap: wrap;
             padding: 20px;
             box-sizing: border-box;
-            flex-grow: 1; /* Yatay boşlukları dengelemek için */
-            justify-content: center;
-            align-items: center;
-            gap: 20px; /* Bölümler arasına boşluk */
-        }
-
-        .left, .right {
-            box-sizing: border-box;
-            padding: 10px;
+            gap: 20px; /* Bölümler arası boşluk */
+            justify-content: center; /* Ortaya hizalama */
+            align-items: center; /* Dikey hizalama */
+            flex-grow: 1; /* Düzgün yayılma için */
         }
 
         .left {
-            flex: 1 1 100%; /* Mobilde tam genişlik */
-            text-align: center;
+            flex: 0 0 40%; /* Geniş ekranlarda %40 alan */
+            text-align: center; /* Metni ortala */
+            box-sizing: border-box;
+            padding: 20px; /* İç boşluk */
         }
 
         .right {
-            flex: 1 1 100%; /* Mobilde tam genişlik */
+            flex: 0 0 60%; /* Resim için %60 alan */
             display: flex;
             justify-content: center;
-            align-items: center; /* Yatayda ve dikeyde merkez */
+            align-items: center;
+            box-sizing: border-box;
         }
 
         img {
             max-width: 100%;
-            max-height: 500px; /* Görsel yüksekliğini kısıtla */
             height: auto;
+            max-height: 600px; /* Maksimum resim boyu */
         }
 
         .footer {
@@ -55,23 +53,13 @@
             font-size: 1em;
             padding: 10px;
             text-align: center;
-            position: relative; /* Flex düzen içinde kayan değil, sabit */
+            position: relative;
+            width: 100%;
         }
 
-        @media (min-width: 768px) {
-            .container {
-                display: flex; /* Yan yana düzen */
-                flex-wrap: nowrap;
-                gap: 40px; /* Yan yana göründüğünde daha fazla boşluk */
-            }
-
-            .left {
-                flex: 0 0 33%; /* Masaüstü genişlik ayarı */
-                text-align: left;
-            }
-
-            .right {
-                flex: 0 0 67%; /* Masaüstü genişlik ayarı */
+        @media (max-width: 768px) {
+            .left, .right {
+                flex: 1 1 100%; /* Mobil cihazlarda tam genişlik */
             }
         }
     </style>
