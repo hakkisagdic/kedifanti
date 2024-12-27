@@ -55,15 +55,20 @@
 
         /* Medya sorguları ile mobil uyumluluk sağlıyoruz */
         @media (min-width: 768px) {
-            .left {
-                width: 33%;
-                text-align: left; /* Geniş ekranlarda sola hizalama */
-            }
+    .container {
+        display: flex; /* Geniş ekranlar için flexbox düzeni */
+        flex-wrap: nowrap; /* Yan yana görünsün */
+    }
 
-            .right {
-                width: 67%;
-            }
-        }
+    .left {
+        flex: 0 0 33%; /* Sol sütunu %33 genişlik */
+    }
+
+    .right {
+        flex: 0 0 67%; /* Sağ sütunu %67 genişlik */
+    }
+}
+
     </style>
 </head>
 <body>
